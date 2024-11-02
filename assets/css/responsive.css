@@ -101,6 +101,7 @@
         padding: 10px 16px; /* Consistent padding */
         text-decoration: none;
         display: block;
+        background-color: var(--header-bg-color , #000000e8);
     }
 
     #dropdown-menu a:last-child {
@@ -108,8 +109,8 @@
     }
 
     #dropdown-menu a:hover {
-        background-color: var(--hover-text-color , rgba(255, 255, 255, 0.9)) ; /* Light gray for hover */
-        color: var(--hover-text-color , #000);
+        background-color: var(--hover-bg-color , rgba(255, 255, 255, 0.9)) ; /* Light gray for hover */
+        color: var(-text-color , #000);
         transition: transform 0.3s ease;
         transform: scale(1.15);
         cursor: pointer;
