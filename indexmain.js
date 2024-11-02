@@ -27,8 +27,20 @@ function toggleSignUp() {
 }
 
 function toggleMenu() {
+    // In this function we can add a detail. Whenever i click on the ti-menu can change also the color of the navbar as a transparent black like the dropdown menu
     const dropdownMenu = document.getElementById("dropdown-menu");
+    const navbar = document.querySelector(".header-mobile");
+
     dropdownMenu.classList.toggle("show");
+
+    const isDarkMode = document.body.classList.contains('dark-theme');
+
+    if(dropdownMenu.classList.contains("show")){
+        navbar.style.backgroundColor = isDarkMode ? "#444" : "#000000e8";
+    }else{
+        navbar.style.backgroundColor = "";
+    }
+    
 }
 
 // Optional: Close the dropdown if a link inside it is clicked
@@ -74,3 +86,5 @@ toggleButton.addEventListener('click', () => {
             this.classList.add('active');
             });
         });
+
+        

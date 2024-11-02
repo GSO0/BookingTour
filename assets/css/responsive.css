@@ -5,6 +5,9 @@
     background-color: #000;
     position: absolute;
     top: 46px;
+    /* Determine the position of the drop-down menu */
+    left: 0;
+
     width: 20%; /* Adjust width to be smaller */
     max-width: 250px; /* Set a max-width for compactness */
     z-index: 100;
@@ -38,6 +41,10 @@
 }
 /* Mobile-specific styles */
 @media (max-width: 768px) {
+
+    /* WHENEVER THE USER CLICKS THE DARK MODE BUTTON AND RESIZE THE WINDOW THE NAVBAR COLOR AND ALL ITS "CHILDREN" SUCH AS DROPDOWN MENU WILL CHANGE AUTOMATICALLY COLOR SO AS THE COLORS DO NOT GET CONFUSED */
+    /* FOR THIS REASON I USED ALL THE LIGHT AND DARK MODE VARIABLES THAT ARE DECLARED IN THE "mainstyle.css" (LINES 719-735)*/
+
     .main {
         padding-top: 56px; /* Thêm khoảng trống phía trên nội dung chính để tránh header che mất */
     }
@@ -46,14 +53,23 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 16px;
-        background-color: #000;
+        background-color: var(--header-bg-color , #000);
         position: fixed; /* Giữ cố định khi cuộn */
         top: 0;
         left: 0;
         right: 0;
         z-index: 100; /* Đảm bảo header nằm trên các nội dung khác */
     }
-    
+
+    .nav-dropdown li a{
+        padding: 8px 12px;
+        color: var(--link-color , #fff);
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        transition: transform 0.3s ease , background-color 0.3s , color 0.3s;
+    }
+
     .header-nav {
         display: none;
     }
@@ -66,14 +82,14 @@
     #dropdown-menu {
         display: none; /* Hide by default */
         position: absolute;
-        top: 56px;
+        top: 46px;
         right: 16px;
-        background-color: #fff;
+        background-color: var(--header-bg-color , #000000e8);
         padding: 4px 0;
-        border-radius: 8px;
+        border-radius: 0;
         z-index: 2;
         list-style: none;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0);
     }
     
     #dropdown-menu.show {
@@ -81,7 +97,7 @@
     }
 
     #dropdown-menu a {
-        color: #333;
+        color: var(--link-color , #ffffff);
         padding: 10px 16px; /* Consistent padding */
         text-decoration: none;
         display: block;
@@ -92,8 +108,11 @@
     }
 
     #dropdown-menu a:hover {
-        background-color: #f5f5f5; /* Light gray for hover */
-        color: #000;
+        background-color: var(--hover-text-color , rgba(255, 255, 255, 0.9)) ; /* Light gray for hover */
+        color: var(--hover-text-color , #000);
+        transition: transform 0.3s ease;
+        transform: scale(1.15);
+        cursor: pointer;
     }
 
 

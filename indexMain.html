@@ -18,11 +18,10 @@
             <div class="header-nav">
                 <ul class="nav">
 
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><button class="theme-toggle" id="theme-toggle">🌞</button></li>
                 </ul>
 
                 <!-- New update 4/12 -->
@@ -36,14 +35,19 @@
                     <div onclick="document.getElementById('js_login').style.display='none'">
                         <a onclick="toggleSignUp()" class="js-signup js-closelogin">SignUp</a>
                     </div>
+                    <!-- Changed the position of the dark mode -->
+                    <ul><button class="theme-toggle" id="theme-toggle">🌞</button></ul>
                 </div>
             </div>
         
             <!-- Mobile menu icon for dropdown toggle -->
              <div class="header-mobile">
-                <div class="nav">
+                <!-- REMOVE THE ONLY ELEMENT "HOME" IN ORDER TO ADD THE LOGO OF THE WEBSITE "MAROON5" ON THE RIGHT SIDE OF THE NAVBAR AND THE TI-MENU ON THE LEFT-->
+
+                <!-- <div class="nav">
                     <li><a href="#">Home</a></li>
-                </div>
+                </div> -->
+
                 <div id="mobile-menu" class="mobile-menu" onclick="toggleMenu()">
                     <i class="ti-menu"></i>
                 </div>
@@ -51,7 +55,9 @@
                 <ul id="dropdown-menu" class="nav-dropdown">
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
-                    <li><a href="#contact" style="border-bottom: 1px solid #e0e0e0;">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" style="border-bottom: 1px solid #e0e0e0;">Home</a></li>
+
                     <li><a onclick="toggleLogIn()" class="js-login">LogIn</a></li>
                     <li><a onclick="toggleSignUp()" class="js-signup">SignUp</a></li>
                 </ul>
@@ -165,7 +171,7 @@
                     <p><i class="ti-location-pin"></i>Tokyo, Japan</p>
                     <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
                     <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
-                    <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
+                    <!-- <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p> -->
                 </div>
                 <div class="contact-form">
                     <form action="">
@@ -183,7 +189,7 @@
                             </div>
                             </div>
                         </div>
-                        <input class="btn" type="submit" value="SEND">
+                        <input class="btnSentEmail" type="submit" value="SEND">
                     </form>
                 </div>
             </div>

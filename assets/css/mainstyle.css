@@ -25,10 +25,18 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav{
+    position: relative;
 }
 
 .nav > li {
     display: inline-block;
+    position: relative;
 }
 
 .nav li a {
@@ -37,24 +45,23 @@ html {
     line-height: 46px;
     display: block;
     color: #fff;
-    transition: background linear 0.25s, color linear 0.25s;
-    position: relative;
-}
-/* Setting the width of the underline for the active link*/
-.nav li a.active:after{
-    width: 100%;
+    transition: background-color linear 0.25s, color linear 0.25s;
 }
 
-/* Style for the underline effect on links */
 .nav li a:after{
-    content:'';
-    position:absolute;
+    content: "";
+    position: absolute;
     left: 0;
     bottom: 0;
-    width: 0;
+    width: 100%;
     height: 2px;
-    background-color: #fff;
-    transition: width 0.25s ease-in-out;
+    background-color: #ffffff6c;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav li a:hover:after {
+    transform: scaleX(1); /* Expand the underline on hover */
 }
 
 .subuser li a {
@@ -76,13 +83,22 @@ html {
 .user{
     float: right;
     padding-right: 20px;
-    display: flex;
     position: absolute;
-    top: 0;
+    /* Aligned the signUp and Login choices with the nav content */
+    top: 5;
     right: 0;
-
+    /* Set the position of the dark mode button centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* design the theme-toggle */
+.theme-toggle{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 .user a {
     text-decoration: none;
     padding: 0 24px;
@@ -90,11 +106,15 @@ html {
     display: block;
     color: #fff;
     cursor: pointer;
+    transition: color 0.5s ease , background-color 0.5s ease , transform 0.3s ease;
+    display: inline-block;
 }
 
 .user a:hover {
     color: #000;
-    background-color: #ccc;
+    background-color: #CBC6BF !important; /* Add !important to override */
+    transition: 0.5s ease;
+    transform: scale(1.1)translate(-10% , 10%);
 }
 
 .user img{
@@ -284,7 +304,30 @@ html {
     background-color: #000;
     color: #fff;
     text-decoration: none;
+    transition-duration: 0.4s;
     border: none;
+}
+
+
+/* Make the sent button more fun */
+.btnSentEmail{
+    background-color: #000;
+    border-radius: 25px;
+    border: white;
+    color: white;
+    padding: 4px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.6s;
+    cursor: pointer;
+}
+
+.btnSentEmail:hover{
+    background-color: rgba(219, 215, 212, 0.637);
+    color: #000;
 }
 
 .btn:hover {
@@ -678,7 +721,7 @@ html {
     --text-color: #000000;
     --header-bg-color: #000;
     --link-color: #fff;
-    --hover-bg-color: #ccc;
+    --hover-bg-color: rgba(0,0,0,0.1);
     --hover-text-color: #000;
 }
 
@@ -719,7 +762,7 @@ body {
     color: var(--hover-text-color);
 }
 
-.theme-toggle {
+/* .theme-toggle {
     position: flex;
     top: 10px;
     right: 20px;
@@ -730,5 +773,5 @@ body {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-}
-
+} */
+ 
