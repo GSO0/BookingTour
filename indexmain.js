@@ -36,7 +36,7 @@ function toggleMenu() {
     const isDarkMode = document.body.classList.contains('dark-theme');
 
     if(dropdownMenu.classList.contains("show")){
-        navbar.style.backgroundColor = isDarkMode ? "#444" : "#000000e8";
+        navbar.style.backgroundColor = isDarkMode ? "#444" : "000";
     }else{
         navbar.style.backgroundColor = "";
     }
